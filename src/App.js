@@ -424,16 +424,7 @@ const TransportAnalyticsApp = () => {
             >
               {isLoading ? 'Вход...' : 'Войти'}
             </button>
-          </div>
           
-          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-            <p className="text-sm text-gray-600 mb-2">Демо-аккаунты:</p>
-            <div className="text-xs text-gray-500 space-y-1">
-              <div>admin@company.com / AdminPass2024!</div>
-              <div>user1@company.com / 123456</div>
-              <div>demo@company.com / demo</div>
-            </div>
-          </div>
         </div>
       </div>
     );
