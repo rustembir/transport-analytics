@@ -190,7 +190,7 @@ const TransportAnalyticsApp = () => {
       const { data, error } = await supabaseClient.auth.signIn(email, password);
       
       if (error) {
-        alert(error.message);
+        window.alert(error.message);
         return;
       }
       
@@ -198,7 +198,7 @@ const TransportAnalyticsApp = () => {
       setUserRole(data.user.role);
       setIsAuthenticated(true);
     } catch (error) {
-      alert('Ошибка входа: ' + error.message);
+      window.alert('Ошибка входа: ' + error.message);
     } finally {
       setIsLoading(false);
     }
@@ -215,7 +215,7 @@ const TransportAnalyticsApp = () => {
       setProcessedData([]);
       setUploadHistory([]);
     } catch (error) {
-      alert('Ошибка выхода: ' + error.message);
+      window.alert('Ошибка выхода: ' + error.message);
     } finally {
       setIsLoading(false);
     }
@@ -267,7 +267,7 @@ const TransportAnalyticsApp = () => {
         setUploadHistory(prev => [newUpload, ...prev]);
         setCurrentView('editor');
       } catch (error) {
-        alert('Ошибка при обработке файла: ' + error.message);
+        window.alert('Ошибка при обработке файла: ' + error.message);
       } finally {
         setIsProcessing(false);
         if (fileInputRef.current) {
@@ -592,7 +592,7 @@ const TransportAnalyticsApp = () => {
     };
     
     const handleDelete = (id) => {
-      if (confirm('Удалить эту запись?')) {
+      if (window.confirm('Удалить эту запись?')) {
         setProcessedData(prev => prev.filter(item => item.id !== id));
       }
     };
@@ -801,7 +801,7 @@ const TransportAnalyticsApp = () => {
     
     const handleAddUser = async () => {
       if (!newUser.email || !newUser.password) {
-        alert('Заполните все поля');
+        window.alert('Заполните все поля');
         return;
       }
       
@@ -815,13 +815,13 @@ const TransportAnalyticsApp = () => {
         }]);
         
         if (!error) {
-          alert('Пользователь успешно добавлен');
+          window.alert('Пользователь успешно добавлен');
           setNewUser({ email: '', password: '', role: 'user' });
           setShowAddUser(false);
           loadUsers();
         }
       } catch (error) {
-        alert('Ошибка добавления пользователя: ' + error.message);
+        window.alert('Ошибка добавления пользователя: ' + error.message);
       }
     };
     
