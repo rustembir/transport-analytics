@@ -31,7 +31,7 @@ import {
   Cloud,
   CheckCircle
 } from 'lucide-react';
-import * as XLSX from 'sheetjs';
+import * as XLSX from 'xlsx';
 
 // ================================
 // SUPABASE КОНФИГУРАЦИЯ
